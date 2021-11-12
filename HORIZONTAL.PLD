@@ -1,0 +1,48 @@
+Name     Horizontal ;
+PartNo   00 ;
+Date     11/10/2021 ;
+Revision 01 ;
+Designer Eric Badger ;
+Company  Eric Badger ;
+Assembly None ;
+Location  ;
+Device   g22V10 ;
+
+
+/*
+SVGA timing info
+
+Scanline part	Pixels	Time [microseconds]
+Visible area	800	20
+Front porch	40	1
+Sync pulse	128	3.2
+Back porch	88	2.2
+Whole line	1056	26.4
+*/
+
+/* *************** INPUT PINS *********************/
+PIN  1       = PHI2;
+PIN [2..11]  = [C11..C2];
+PIN [13..14] = [C1..C0];
+
+/* *************** OUTPUT PINS *********************/
+PIN   15     = RESET;
+PIN   16     = HSYNC;
+PIN   17     = HBLANK;
+PIN   18     = HDISPLAY;
+PIN   19     = NOTC2;
+
+FIELD Counter = [C11..C0];
+
+Display = Counter:[0000..0320];
+FrontPorch = Counter:[0320..0348];
+SyncPulse = Counter:[0348..03C8];
+BackPorch = Counter:[03C9..0420];
+Restart = Counter:[0420..0421];
+
+
+RESET = Restart;
+!HSYNC = SyncPulse;
+HDISPLAY = Display;
+!HBLANK = Display;
+!NOTC2 = C2;

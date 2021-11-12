@@ -1,0 +1,195 @@
+{COMPONENT C:\WINCUPL\WINCUPL\HORIZONTAL.SYM
+
+ {ENVIRONMENT
+  {PDIFvrev 3.00}
+  {Program "CUPL(WM) Version 5.0a"}
+  {DBtype "Schematic"}
+  {DBvrev 1.01}
+  {DBtime "Fri Nov 12 14:31:08 2021 "}
+  {DBunit "MIL"}
+  {DBgrid 10}
+  {Lyrstr "WIRES" 1 "BUS" 1 "GATE" 2 "IEEE" 2 "PINFUN" 3 "PINNUM" 1 
+          "PINNAM" 6 "PINCON" 4 "REFDES" 2 "ATTR" 6 "SDOT" 1 
+          "DEVICE" 5 "OUTLIN" 5 "ATTR2" 6 "NOTES" 6 "NETNAM" 4 
+          "CMPNAM" 5 "BORDER" 5}
+ }
+
+ {USER
+  {VIEW
+   {Mode SYMB}
+   {Nlst OPEN}
+   {Vw 0 0 2}
+   {Lv 12 2 2 2 0 0 2 2 2 2 0 0 2 1 2 0 0 0 0}
+   {Gs 10 10}
+  }
+ }
+
+ {DISPLAY
+  [Ly "PINNUM"]
+  [Ls "SOLID"][Wd 0]
+  [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+ }
+
+ {SYMBOL
+  {PIN_DEF
+   [Ly "PINCON"]
+   {P PHI2 {Pt "INPUT"}{Lq 0}{Ploc 100 280}}
+   {P C11 {Pt "INPUT"}{Lq 0}{Ploc 100 240}}
+   {P C10 {Pt "INPUT"}{Lq 0}{Ploc 100 220}}
+   {P C9 {Pt "INPUT"}{Lq 0}{Ploc 100 200}}
+   {P C8 {Pt "INPUT"}{Lq 0}{Ploc 100 180}}
+   {P C7 {Pt "INPUT"}{Lq 0}{Ploc 100 160}}
+   {P C6 {Pt "INPUT"}{Lq 0}{Ploc 100 140}}
+   {P C5 {Pt "INPUT"}{Lq 0}{Ploc 100 120}}
+   {P C4 {Pt "INPUT"}{Lq 0}{Ploc 100 100}}
+   {P C3 {Pt "INPUT"}{Lq 0}{Ploc 100 80}}
+   {P C2 {Pt "INPUT"}{Lq 0}{Ploc 100 60}}
+   {P C1 {Pt "INPUT"}{Lq 0}{Ploc 100 40}}
+   {P C0 {Pt "INPUT"}{Lq 0}{Ploc 100 20}}
+   {P RESET {Pt "I/O"}{Lq 0}{Ploc 320 20}}
+   {P HSYNC {Pt "I/O"}{Lq 0}{Ploc 320 40}}
+   {P HBLANK {Pt "I/O"}{Lq 0}{Ploc 320 60}}
+   {P HDISPLAY {Pt "I/O"}{Lq 0}{Ploc 320 80}}
+   {P NOTC2 {Pt "I/O"}{Lq 0}{Ploc 320 100}}
+  }
+
+  {PKG
+   [Ly "REFDES"]
+   [Ts 25][Tj "CB"][Tr 0][Tm "N"]
+   {Rdl 210 310}
+
+   [Ly "PINNUM"]
+   [Ts 15][Tj "RC"]
+   {Pnl 120 290}
+   [Ts 15][Tj "RC"]
+   {Pnl 120 250}
+   {Pnl 120 230}
+   {Pnl 120 210}
+   {Pnl 120 190}
+   {Pnl 120 170}
+   {Pnl 120 150}
+   {Pnl 120 130}
+   {Pnl 120 110}
+   {Pnl 120 90}
+   {Pnl 120 70}
+   {Pnl 120 50}
+   {Pnl 120 30}
+   [Ts 15][Tj "LC"]
+   {Pnl 300 30}
+   {Pnl 300 50}
+   {Pnl 300 70}
+   {Pnl 300 90}
+   {Pnl 300 110}
+
+   {Sd A 1 2 3 4 5 6 7 8 9 10 11 13 14 15 16 17 18 19}
+  }
+
+  {PIC
+   [Ly "GATE"]
+   [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+   {R 130 300 290 0}
+   {L 130 280 100 280}
+   {L 130 290 140 280 130 270}
+   {L 130 240 100 240}
+   {L 130 220 100 220}
+   {L 130 200 100 200}
+   {L 130 180 100 180}
+   {L 130 160 100 160}
+   {L 130 140 100 140}
+   {L 130 120 100 120}
+   {L 130 100 100 100}
+   {L 130 80 100 80}
+   {L 130 60 100 60}
+   {L 130 40 100 40}
+   {L 130 20 100 20}
+   {L 290 20 320 20}
+   {L 290 40 320 40}
+   {L 290 60 320 60}
+   {L 290 80 320 80}
+   {L 290 100 320 100}
+   [Ly "PINNAM"]
+   [Tj "LC"]
+   {T "PHI2" 140 280}
+   {T "C11" 140 240}
+   {T "C10" 140 220}
+   {T "C9" 140 200}
+   {T "C8" 140 180}
+   {T "C7" 140 160}
+   {T "C6" 140 140}
+   {T "C5" 140 120}
+   {T "C4" 140 100}
+   {T "C3" 140 80}
+   {T "C2" 140 60}
+   {T "C1" 140 40}
+   {T "C0" 140 20}
+   [Tj "RC"]
+   {T "RESET" 280 20}
+   {T "HSYNC" 280 40}
+   {T "HBLANK" 280 60}
+   {T "HDISPLAY" 280 80}
+   {T "NOTC2" 280 100}
+   [Ly "DEVICE"]
+   [Tj "CT"]
+   {T "G22V10" 210 -10}
+  }
+
+  {ATR
+   {IN
+    {Org 100 20}
+    {Ty 255}
+   }
+   {EX
+    [Ly "ATTR2"]
+    [Ts 12][Tj "CT"][Tr 0][Tm "N"]
+    {At PLD C:\WINCUPL\WINCUPL\HORIZONTAL 210 300}
+   }
+  }
+ }
+
+ {DETAIL
+  {ANNOTATE
+  }
+
+  {NET_DEF
+   {N PHI2
+   }
+   {N C11
+   }
+   {N C10
+   }
+   {N C9
+   }
+   {N C8
+   }
+   {N C7
+   }
+   {N C6
+   }
+   {N C5
+   }
+   {N C4
+   }
+   {N C3
+   }
+   {N C2
+   }
+   {N C1
+   }
+   {N C0
+   }
+   {N RESET
+   }
+   {N HSYNC
+   }
+   {N HBLANK
+   }
+   {N HDISPLAY
+   }
+   {N NOTC2
+   }
+  }
+
+  {SUBCOMP
+  }
+ }
+}

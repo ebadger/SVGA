@@ -1,0 +1,31 @@
+/*
+    SVGA timing
+    Screen refresh rate	60 Hz
+    Vertical refresh 37.878787878788 kHz
+    Pixel freq. 40.0 MHz
+    Scanline part     Pixels    Time [microseconds]
+    Visible area      800	    20
+    Front porch        40          1
+    Sync pulse        128        3.2
+    Back porch         88        2.2
+    Whole line       1056       26.4
+*/
+
+ORDER: PHI2, C11, C10, C9, C8, C7, C6, C5, C4, C3, C2, C1, C0, RESET, HSYNC, HBLANK, HDISPLAY, NOTC2;
+
+
+VECTORS:
+0000000000000*****
+1000000000001*****
+0000000000001*****
+1001100011110*****  /* 399  LHLHL In the display area */
+0001100011110*****  /* 399  LHLHL In the display area */
+0001100110100*****  /* 820  LHHLL In the front porch  */
+1001100110100*****  /* 820  LHHLL In the front porch  */
+0001101001000*****  /* 840  LLHLH In the sync pulse   */
+1001101001000*****  /* 840  LLHLH In the sync pulse   */
+0010000100000*****  /* 1056 HHHLH Reset               */
+1010000100000*****  /* 1056 HHHLH Reset               */
+0010000100001*****  /* 1057 HHHLH Reset               */
+1010000100001*****  /* 1057 HHHLH Reset               */
+
