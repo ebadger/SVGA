@@ -26,11 +26,11 @@ PIN [2..11]  = [C11..C2];
 PIN [13..14] = [C1..C0];
 
 /* *************** OUTPUT PINS *********************/
-PIN   15     = RESET;
 PIN   16     = HSYNC;
 PIN   17     = HBLANK;
 PIN   18     = HDISPLAY;
-PIN   19     = NOTC2;
+PIN   22     = NOTC2;
+PIN   23     = RESET;
 
 FIELD Counter = [C11..C0];
 

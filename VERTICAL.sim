@@ -1,0 +1,145 @@
+%SIGNAL
+PIN  19 =  BLANK 
+PIN  14 =  C0 
+PIN  13 =  C1 
+PIN  11 =  C2 
+PIN  10 =  C3 
+PIN   9 =  C4 
+PIN   8 =  C5 
+PIN   7 =  C6 
+PIN   6 =  C7 
+PIN   5 =  C8 
+PIN   4 =  C9 
+PIN   3 =  C10 
+PIN   2 =  C11 
+PIN  20 =  DISPLAY 
+PIN  15 =  HDISPLAY 
+PIN   1 =  PHI2 
+PIN  23 =  RESET 
+PIN  17 =  VBLANK 
+PIN  18 =  VDISPLAY 
+PIN  16 =  VSYNC 
+%END
+
+%FIELD
+FIELD Counter = C11,C10,C9,C8,C7,C6,C5,C4,C3,C2,C1,C0
+%END
+
+%EQUATION
+!BLANK =>
+    !C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11 & HDISPLAY
+  # C4 & C5 & C7 & !C9 & !C10 & !C11 & HDISPLAY
+  # !C6 & !C7 & !C8 & !C10 & !C11 & HDISPLAY
+  # !C4 & C5 & !C6 & !C7 & C8 & !C9 & !C10 & !C11 & HDISPLAY
+  # !C4 & !C5 & C6 & !C7 & !C8 & !C10 & !C11 & HDISPLAY
+  # C4 & !C6 & !C7 & C8 & !C9 & !C10 & !C11 & HDISPLAY
+  # !C4 & !C5 & !C7 & C8 & !C9 & !C10 & !C11 & HDISPLAY
+  # C4 & C6 & !C7 & !C9 & !C10 & !C11 & HDISPLAY
+  # !C4 & C5 & C6 & !C9 & !C10 & !C11 & HDISPLAY
+  # !C4 & C5 & !C6 & C7 & !C9 & !C10 & !C11 & HDISPLAY
+  # !C5 & C7 & !C9 & !C10 & !C11 & HDISPLAY
+
+BackPorch =>
+    C0 & C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+  # !C0 & C1 & C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+  # !C0 & !C1 & C2 & !C3 & C4 & C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+  # !C2 & !C3 & C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+  # C3 & !C4 & C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+  # C2 & !C3 & !C4 & C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+
+DISPLAY =>
+    !C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11 & HDISPLAY
+  # C4 & C5 & C7 & !C9 & !C10 & !C11 & HDISPLAY
+  # !C6 & !C7 & !C8 & !C10 & !C11 & HDISPLAY
+  # !C4 & C5 & !C6 & !C7 & C8 & !C9 & !C10 & !C11 & HDISPLAY
+  # !C4 & !C5 & C6 & !C7 & !C8 & !C10 & !C11 & HDISPLAY
+  # C4 & !C6 & !C7 & C8 & !C9 & !C10 & !C11 & HDISPLAY
+  # !C4 & !C5 & !C7 & C8 & !C9 & !C10 & !C11 & HDISPLAY
+  # C4 & C6 & !C7 & !C9 & !C10 & !C11 & HDISPLAY
+  # !C4 & C5 & C6 & !C9 & !C10 & !C11 & HDISPLAY
+  # !C4 & C5 & !C6 & C7 & !C9 & !C10 & !C11 & HDISPLAY
+  # !C5 & C7 & !C9 & !C10 & !C11 & HDISPLAY
+
+Display =>
+    !C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+  # C4 & C5 & C7 & !C9 & !C10 & !C11
+  # !C6 & !C7 & !C8 & !C10 & !C11
+  # !C4 & C5 & !C6 & !C7 & C8 & !C9 & !C10 & !C11
+  # !C4 & !C5 & C6 & !C7 & !C8 & !C10 & !C11
+  # C4 & !C6 & !C7 & C8 & !C9 & !C10 & !C11
+  # !C4 & !C5 & !C7 & C8 & !C9 & !C10 & !C11
+  # C4 & C6 & !C7 & !C9 & !C10 & !C11
+  # !C4 & C5 & C6 & !C9 & !C10 & !C11
+  # !C5 & C7 & !C9 & !C10 & !C11
+  # !C4 & C5 & !C6 & C7 & !C9 & !C10 & !C11
+
+FrontPorch =>
+    !C1 & !C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+
+RESET =>
+    !C1 & C2 & !C3 & C4 & C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+
+Restart =>
+    !C1 & C2 & !C3 & C4 & C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+
+SyncPulse =>
+    C0 & !C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+  # !C0 & C1 & !C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+  # !C1 & C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+
+!VBLANK =>
+    !C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+  # C4 & C5 & C7 & !C9 & !C10 & !C11
+  # !C6 & !C7 & !C8 & !C10 & !C11
+  # !C4 & C5 & !C6 & !C7 & C8 & !C9 & !C10 & !C11
+  # !C4 & !C5 & C6 & !C7 & !C8 & !C10 & !C11
+  # C4 & !C6 & !C7 & C8 & !C9 & !C10 & !C11
+  # !C4 & !C5 & !C7 & C8 & !C9 & !C10 & !C11
+  # C4 & C6 & !C7 & !C9 & !C10 & !C11
+  # !C4 & C5 & C6 & !C9 & !C10 & !C11
+  # !C5 & C7 & !C9 & !C10 & !C11
+  # !C4 & C5 & !C6 & C7 & !C9 & !C10 & !C11
+
+VDISPLAY =>
+    !C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+  # C4 & C5 & C7 & !C9 & !C10 & !C11
+  # !C6 & !C7 & !C8 & !C10 & !C11
+  # !C4 & C5 & !C6 & !C7 & C8 & !C9 & !C10 & !C11
+  # !C4 & !C5 & C6 & !C7 & !C8 & !C10 & !C11
+  # C4 & !C6 & !C7 & C8 & !C9 & !C10 & !C11
+  # !C4 & !C5 & !C7 & C8 & !C9 & !C10 & !C11
+  # C4 & C6 & !C7 & !C9 & !C10 & !C11
+  # !C4 & C5 & C6 & !C9 & !C10 & !C11
+  # !C5 & C7 & !C9 & !C10 & !C11
+  # !C4 & C5 & !C6 & C7 & !C9 & !C10 & !C11
+
+!VSYNC =>
+    C0 & !C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+  # !C0 & C1 & !C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+  # !C1 & C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+
+BLANK.oe  =>
+    1 
+
+C0.oe  =>
+    0 
+
+DISPLAY.oe  =>
+    1 
+
+HDISPLAY.oe  =>
+    0 
+
+RESET.oe  =>
+    1 
+
+VBLANK.oe  =>
+    1 
+
+VDISPLAY.oe  =>
+    1 
+
+VSYNC.oe  =>
+    1 
+
+%END

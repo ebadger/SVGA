@@ -1,0 +1,49 @@
+CSIM(WM): CUPL Simulation Program
+Version 5.0a Serial# 
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+CREATED Fri Nov 12 15:33:20 2021
+
+LISTING FOR SIMULATION FILE: HORIZONTAL.si
+
+   1: /*
+   2:     SVGA timing
+   3:     Screen refresh rate	60 Hz
+   4:     Vertical refresh 37.878787878788 kHz
+   5:     Pixel freq. 40.0 MHz
+   6:     Scanline part     Pixels    Time [microseconds]
+   7:     Visible area      800	    20
+   8:     Front porch        40          1
+   9:     Sync pulse        128        3.2
+  10:     Back porch         88        2.2
+  11:     Whole line       1056       26.4
+  12: */
+  13: 
+[0026sa] Please note: missing header item(s) 
+  14: FIELD Counter = [C11,C10,C9,C8,C7,C6,C5,C4,C3,C2,C1,C0];
+  15:
+  16: ORDER: PHI2, C11, C10, C9, C8, C7, C6, C5, C4, C3, C2, C1, C0, RESET, HSYNC, HBLANK, HDISPLAY, NOTC2;
+  17: 
+  18: 
+
+===========================
+                      H    
+                      D    
+                     HI    
+                   RHBSN   
+      P            ESLPO   
+      HCC          SYALT   
+      I11CCCCCCCCCCENNAC   
+      2109876543210TCKY2   
+===========================
+0001: 1000000000001LHLHH
+0002: 0000000000001LHLHH
+0003: 1001100011110LHLHL
+0004: 0001100011110LHLHL
+0005: 0001100110100LHHLL
+0006: 1001100110100LHHLL
+0007: 0001101001000LLHLH
+0008: 1001101001000LLHLH
+0009: 0010000100000HHHLH
+0010: 1010000100000HHHLH
+0011: 0010000100001HHHLH
+0012: 1010000100001HHHLH

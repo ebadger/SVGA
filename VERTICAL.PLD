@@ -1,0 +1,52 @@
+Name     Vertical ;
+PartNo   00 ;
+Date     11/10/2021 ;
+Revision 01 ;
+Designer Eric Badger ;
+Company  Eric Badger ;
+Assembly None ;
+Location  ;
+Device   g22V10 ;
+
+
+/*
+    SVGA timing info
+
+    Frame part	Lines	Time [ms]
+    Visible area	600	15.84
+    Front porch	  1	 0.0264
+    Sync pulse	  4	 0.1056
+    Back porch	 23	 0.6072
+    Whole frame	628	16.5792
+*/
+
+/* *************** INPUT PINS *********************/
+PIN 1        = PHI2;
+PIN [2..11]  = [C11..C2];
+PIN [13..14] = [C1..C0];
+
+PIN 15       = HDISPLAY;
+
+/* *************** OUTPUT PINS *********************/
+PIN   16     = VSYNC;
+PIN   17     = VBLANK;
+PIN   18     = VDISPLAY;
+
+PIN   19     = BLANK;
+PIN   20     = DISPLAY;
+PIN   23     = RESET;
+
+FIELD Counter = [C11..C0];
+
+Display     = Counter:[0000..0257]; /*   0-599 */
+FrontPorch  = Counter:[0258..0259]; /* 600-601 */
+SyncPulse   = Counter:[0259..025D]; /* 601-605 */   
+BackPorch   = Counter:[025D..0274]; /* 605-628 */
+Restart     = Counter:[0274..0275]; /* 628-629 */
+
+RESET    = Restart;
+!VSYNC   = SyncPulse;
+VDISPLAY = Display;
+!VBLANK  = Display;
+!BLANK   = Display & HDISPLAY;
+DISPLAY  = Display & HDISPLAY;

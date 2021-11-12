@@ -5,7 +5,7 @@
   {Program "CUPL(WM) Version 5.0a"}
   {DBtype "Schematic"}
   {DBvrev 1.01}
-  {DBtime "Fri Nov 12 14:31:08 2021 "}
+  {DBtime "Fri Nov 12 15:31:44 2021 "}
   {DBunit "MIL"}
   {DBgrid 10}
   {Lyrstr "WIRES" 1 "BUS" 1 "GATE" 2 "IEEE" 2 "PINFUN" 3 "PINNUM" 1 
@@ -46,11 +46,11 @@
    {P C2 {Pt "INPUT"}{Lq 0}{Ploc 100 60}}
    {P C1 {Pt "INPUT"}{Lq 0}{Ploc 100 40}}
    {P C0 {Pt "INPUT"}{Lq 0}{Ploc 100 20}}
-   {P RESET {Pt "I/O"}{Lq 0}{Ploc 320 20}}
-   {P HSYNC {Pt "I/O"}{Lq 0}{Ploc 320 40}}
-   {P HBLANK {Pt "I/O"}{Lq 0}{Ploc 320 60}}
-   {P HDISPLAY {Pt "I/O"}{Lq 0}{Ploc 320 80}}
-   {P NOTC2 {Pt "I/O"}{Lq 0}{Ploc 320 100}}
+   {P HSYNC {Pt "I/O"}{Lq 0}{Ploc 320 20}}
+   {P HBLANK {Pt "I/O"}{Lq 0}{Ploc 320 40}}
+   {P HDISPLAY {Pt "I/O"}{Lq 0}{Ploc 320 60}}
+   {P NOTC2 {Pt "I/O"}{Lq 0}{Ploc 320 80}}
+   {P RESET {Pt "I/O"}{Lq 0}{Ploc 320 100}}
   }
 
   {PKG
@@ -81,7 +81,7 @@
    {Pnl 300 90}
    {Pnl 300 110}
 
-   {Sd A 1 2 3 4 5 6 7 8 9 10 11 13 14 15 16 17 18 19}
+   {Sd A 1 2 3 4 5 6 7 8 9 10 11 13 14 16 17 18 22 23}
   }
 
   {PIC
@@ -123,11 +123,11 @@
    {T "C1" 140 40}
    {T "C0" 140 20}
    [Tj "RC"]
-   {T "RESET" 280 20}
-   {T "HSYNC" 280 40}
-   {T "HBLANK" 280 60}
-   {T "HDISPLAY" 280 80}
-   {T "NOTC2" 280 100}
+   {T "HSYNC" 280 20}
+   {T "HBLANK" 280 40}
+   {T "HDISPLAY" 280 60}
+   {T "NOTC2" 280 80}
+   {T "RESET" 280 100}
    [Ly "DEVICE"]
    [Tj "CT"]
    {T "G22V10" 210 -10}
@@ -177,8 +177,6 @@
    }
    {N C0
    }
-   {N RESET
-   }
    {N HSYNC
    }
    {N HBLANK
@@ -186,6 +184,8 @@
    {N HDISPLAY
    }
    {N NOTC2
+   }
+   {N RESET
    }
   }
 

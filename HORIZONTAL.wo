@@ -1,0 +1,31 @@
+#WAVEFORM
+#H /*
+#H     SVGA timing
+#H     Screen refresh rate	60 Hz
+#H     Vertical refresh 37.878787878788 kHz
+#H     Pixel freq. 40.0 MHz
+#H     Scanline part     Pixels    Time [microseconds]
+#H     Visible area      800	    20
+#H     Front porch        40          1
+#H     Sync pulse        128        3.2
+#H     Back porch         88        2.2
+#H     Whole line       1056       26.4
+#H */
+#H 
+#F Counter = [C11,C10,C9,C8,C7,C6,C5,C4,C3,C2,C1,C0];
+
+#H ORDER: PHI2, C11, C10, C9, C8, C7, C6, C5, C4, C3, C2, C1, C0, RESET, HSYNC, HBLANK, HDISPLAY, NOTC2;
+#H 
+#H 
+#V 0001 1000000000001LHLHH
+#V 0002 0000000000001LHLHH
+#V 0003 1001100011110LHLHL
+#V 0004 0001100011110LHLHL
+#V 0005 0001100110100LHHLL
+#V 0006 1001100110100LHHLL
+#V 0007 0001101001000LLHLH
+#V 0008 1001101001000LLHLH
+#V 0009 0010000100000HHHLH
+#V 0010 1010000100000HHHLH
+#V 0011 0010000100001HHHLH
+#V 0012 1010000100001HHHLH
