@@ -38,15 +38,15 @@ PIN   23     = RESET;
 
 FIELD Counter = [C11..C0];
 
-Display     = Counter:[0000..0257]; /*   0-599 */
-FrontPorch  = Counter:[0257..0258]; /* 599-600 */
-SyncPulse   = Counter:[0259..025C]; /* 601-604 */   
-BackPorch   = Counter:[025C..0273]; /* 604-627 */
-Restart     = Counter:[0273..0274]; /* 627-628 */
+Display     = Counter:[0000..0257];     /*   0-599 */
+/*FrontPorch  = Counter:[0257..0258];*/ /* 599-600 */
+SyncPulse   = Counter:[0259..025C];     /* 601-604 */   
+/*BackPorch   = Counter:[025C..0273];*/ /* 604-627 */
+Restart     = Counter:[0273..0274];     /* 627-628 */
 
-RESET    = Restart;
-!VSYNC   = SyncPulse;
-VDISPLAY = Display;
-!VBLANK  = Display;
-!BLANK   = Display & HDISPLAY;
-DISPLAY  = Display & HDISPLAY;
+RESET    =  Restart;
+VSYNC    = !SyncPulse;
+VDISPLAY =  Display;
+VBLANK   = !Display;
+BLANK    = !(Display & HDISPLAY);
+DISPLAY  =  (Display & HDISPLAY);

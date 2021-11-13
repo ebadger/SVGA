@@ -26,7 +26,7 @@ FIELD Counter = C11,C10,C9,C8,C7,C6,C5,C4,C3,C2,C1,C0
 %END
 
 %EQUATION
-!BLANK =>
+BLANK =>
     !C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11 & HDISPLAY
   # C4 & C5 & C7 & !C9 & !C10 & !C11 & HDISPLAY
   # !C6 & !C7 & !C8 & !C10 & !C11 & HDISPLAY
@@ -38,11 +38,6 @@ FIELD Counter = C11,C10,C9,C8,C7,C6,C5,C4,C3,C2,C1,C0
   # !C4 & C5 & C6 & !C9 & !C10 & !C11 & HDISPLAY
   # !C4 & C5 & !C6 & C7 & !C9 & !C10 & !C11 & HDISPLAY
   # !C5 & C7 & !C9 & !C10 & !C11 & HDISPLAY
-
-BackPorch =>
-    C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
-  # !C2 & !C3 & C4 & C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
-  # !C4 & C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
 
 DISPLAY =>
     !C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11 & HDISPLAY
@@ -70,10 +65,6 @@ Display =>
   # !C5 & C7 & !C9 & !C10 & !C11
   # !C4 & C5 & !C6 & C7 & !C9 & !C10 & !C11
 
-FrontPorch =>
-    C0 & C1 & C2 & !C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
-  # !C0 & !C1 & !C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
-
 RESET =>
     C0 & C1 & !C2 & !C3 & C4 & C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
   # !C0 & !C1 & C2 & !C3 & C4 & C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
@@ -87,7 +78,7 @@ SyncPulse =>
   # !C0 & C1 & !C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
   # !C0 & !C1 & C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
 
-!VBLANK =>
+VBLANK =>
     !C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
   # C4 & C5 & C7 & !C9 & !C10 & !C11
   # !C6 & !C7 & !C8 & !C10 & !C11
@@ -113,7 +104,7 @@ VDISPLAY =>
   # !C5 & C7 & !C9 & !C10 & !C11
   # !C4 & C5 & !C6 & C7 & !C9 & !C10 & !C11
 
-!VSYNC =>
+VSYNC =>
     C0 & !C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
   # !C0 & C1 & !C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
   # !C0 & !C1 & C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11

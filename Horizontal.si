@@ -23,8 +23,8 @@ VECTORS:
 1001100110100*****  /* 820  LHHLL In the front porch  */
 0001101001000*****  /* 840  LLHLH In the sync pulse   */
 1001101001000*****  /* 840  LLHLH In the sync pulse   */
-0010000100000*****  /* 1056 HHHLH Reset               */
-1010000100000*****  /* 1056 HHHLH Reset               */
-0010000100001*****  /* 1057 HHHLH Reset               */
-1010000100001*****  /* 1057 HHHLH Reset               */
+0010000011111*****  /* 1055 HHHLL Reset               */
+1010000011111*****  /* 1055 HHHLL Reset               */
+0010000100001*****  /* 1057 LHHLH Reset               */
+1010000100001*****  /* 1057 LHHLH Reset               */
 

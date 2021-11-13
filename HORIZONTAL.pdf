@@ -1,11 +1,11 @@
-{COMPONENT C:\WINCUPL\WINCUPL\HORIZONTAL.SYM
+{COMPONENT C:\SVGA\HORIZONTAL.SYM
 
  {ENVIRONMENT
   {PDIFvrev 3.00}
   {Program "CUPL(WM) Version 5.0a"}
   {DBtype "Schematic"}
   {DBvrev 1.01}
-  {DBtime "Fri Nov 12 15:31:44 2021 "}
+  {DBtime "Fri Nov 12 19:18:25 2021 "}
   {DBunit "MIL"}
   {DBgrid 10}
   {Lyrstr "WIRES" 1 "BUS" 1 "GATE" 2 "IEEE" 2 "PINFUN" 3 "PINNUM" 1 
@@ -141,7 +141,7 @@
    {EX
     [Ly "ATTR2"]
     [Ts 12][Tj "CT"][Tr 0][Tm "N"]
-    {At PLD C:\WINCUPL\WINCUPL\HORIZONTAL 210 300}
+    {At PLD C:\SVGA\HORIZONTAL 210 300}
    }
   }
  }
