@@ -5,7 +5,7 @@
   {Program "CUPL(WM) Version 5.0a"}
   {DBtype "Schematic"}
   {DBvrev 1.01}
-  {DBtime "Fri Nov 12 21:34:08 2021 "}
+  {DBtime "Fri Nov 12 21:40:09 2021 "}
   {DBunit "MIL"}
   {DBgrid 10}
   {Lyrstr "WIRES" 1 "BUS" 1 "GATE" 2 "IEEE" 2 "PINFUN" 3 "PINNUM" 1 
@@ -48,13 +48,14 @@
    {P C1 {Pt "INPUT"}{Lq 0}{Ploc 100 60}}
    {P C0 {Pt "INPUT"}{Lq 0}{Ploc 100 40}}
    {P HDISPLAY {Pt "INPUT"}{Lq 0}{Ploc 100 20}}
-   {P VSYNC {Pt "I/O"}{Lq 0}{Ploc 360 20}}
-   {P VBLANK {Pt "I/O"}{Lq 0}{Ploc 360 40}}
-   {P VDISPLAY {Pt "I/O"}{Lq 0}{Ploc 360 60}}
-   {P BLANK {Pt "I/O"}{Lq 0}{Ploc 360 80}}
-   {P DISPLAY {Pt "I/O"}{Lq 0}{Ploc 360 100}}
-   {P RESET {Pt "I/O"}{Lq 0}{Ploc 360 120}}
-   {P VCC {Pt "OUTPUT"}{Lq 0}{Ploc 360 140}}
+   {P VSYNCSTA {Pt "I/O"}{Lq 0}{Ploc 360 20}}
+   {P VSYNCEND {Pt "I/O"}{Lq 0}{Ploc 360 40}}
+   {P VBLANK {Pt "I/O"}{Lq 0}{Ploc 360 60}}
+   {P VDISPLAY {Pt "I/O"}{Lq 0}{Ploc 360 80}}
+   {P BLANK {Pt "I/O"}{Lq 0}{Ploc 360 100}}
+   {P DISPLAY {Pt "I/O"}{Lq 0}{Ploc 360 120}}
+   {P RESET {Pt "I/O"}{Lq 0}{Ploc 360 140}}
+   {P VCC {Pt "OUTPUT"}{Lq 0}{Ploc 360 160}}
   }
 
   {PKG
@@ -88,8 +89,9 @@
    {Pnl 340 110}
    {Pnl 340 130}
    {Pnl 340 150}
+   {Pnl 340 170}
 
-   {Sd A 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 23 24}
+   {Sd A 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 23 24}
   }
 
   {PIC
@@ -119,6 +121,7 @@
    {L 330 100 360 100}
    {L 330 120 360 120}
    {L 330 140 360 140}
+   {L 330 160 360 160}
    [Ly "PINNAM"]
    [Tj "LC"]
    {T "PHI2" 140 320}
@@ -137,13 +140,14 @@
    {T "C0" 140 40}
    {T "HDISPLAY" 140 20}
    [Tj "RC"]
-   {T "VSYNC" 320 20}
-   {T "VBLANK" 320 40}
-   {T "VDISPLAY" 320 60}
-   {T "BLANK" 320 80}
-   {T "DISPLAY" 320 100}
-   {T "RESET" 320 120}
-   {T "VCC" 320 140}
+   {T "VSYNCSTA" 320 20}
+   {T "VSYNCEND" 320 40}
+   {T "VBLANK" 320 60}
+   {T "VDISPLAY" 320 80}
+   {T "BLANK" 320 100}
+   {T "DISPLAY" 320 120}
+   {T "RESET" 320 140}
+   {T "VCC" 320 160}
    [Ly "DEVICE"]
    [Tj "CT"]
    {T "G22V10" 230 -10}
@@ -197,7 +201,9 @@
    }
    {N HDISPLAY
    }
-   {N VSYNC
+   {N VSYNCSTA
+   }
+   {N VSYNCEND
    }
    {N VBLANK
    }

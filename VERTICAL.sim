@@ -1,5 +1,5 @@
 %SIGNAL
-PIN  19 =  BLANK 
+PIN  20 =  BLANK 
 PIN  14 =  C0 
 PIN  13 =  C1 
 PIN  11 =  C2 
@@ -12,15 +12,16 @@ PIN   5 =  C8
 PIN   4 =  C9 
 PIN   3 =  C10 
 PIN   2 =  C11 
-PIN  20 =  DISPLAY 
+PIN  21 =  DISPLAY 
 PIN  12 =  GND 
 PIN  15 =  HDISPLAY 
 PIN   1 =  PHI2 
 PIN  23 =  RESET 
-PIN  17 =  VBLANK 
+PIN  18 =  VBLANK 
 PIN  24 =  VCC 
-PIN  18 =  VDISPLAY 
-PIN  16 =  VSYNC 
+PIN  19 =  VDISPLAY 
+PIN  17 =  VSYNCEND 
+PIN  16 =  VSYNCSTART 
 %END
 
 %FIELD
@@ -75,10 +76,11 @@ Restart =>
     C0 & C1 & !C2 & !C3 & C4 & C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
   # !C0 & !C1 & C2 & !C3 & C4 & C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
 
-SyncPulse =>
-    C0 & !C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
-  # !C0 & C1 & !C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
-  # !C0 & !C1 & C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+SyncEnd =>
+    !C0 & !C1 & C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+
+SyncStart =>
+    C0 & !C1 & !C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
 
 !VBLANK =>
     !C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
@@ -106,10 +108,11 @@ VDISPLAY =>
   # !C5 & C7 & !C9 & !C10 & !C11
   # !C4 & C5 & !C6 & C7 & !C9 & !C10 & !C11
 
-!VSYNC =>
-    C0 & !C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
-  # !C0 & C1 & !C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
-  # !C0 & !C1 & C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+!VSYNCEND =>
+    !C0 & !C1 & C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
+
+!VSYNCSTART =>
+    C0 & !C1 & !C2 & C3 & C4 & !C5 & C6 & !C7 & !C8 & C9 & !C10 & !C11
 
 BLANK.oe  =>
     1 
@@ -132,7 +135,10 @@ VBLANK.oe  =>
 VDISPLAY.oe  =>
     1 
 
-VSYNC.oe  =>
+VSYNCEND.oe  =>
+    1 
+
+VSYNCSTART.oe  =>
     1 
 
 %END

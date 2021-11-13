@@ -29,24 +29,27 @@ PIN [13..14] = [C1..C0];
 PIN   15     = HDISPLAY;
 
 /* *************** OUTPUT PINS *********************/
-PIN   16     = VSYNC;
-PIN   17     = VBLANK;
-PIN   18     = VDISPLAY;
+PIN   16     = VSYNCSTART;
+PIN   17     = VSYNCEND;
+PIN   18     = VBLANK;
+PIN   19     = VDISPLAY;
 
-PIN   19     = BLANK;
-PIN   20     = DISPLAY;
+PIN   20     = BLANK;
+PIN   21     = DISPLAY;
 PIN   23     = RESET;
 PIN   24     = VCC;
 
 FIELD Counter = [C11..C0];
 
-Display     = Counter:['D'000..'D'599]; 
-SyncPulse   = Counter:['D'601..'D'604];    
+Display     = Counter:['D'000..'D'599];
+SyncStart   = Counter:['D'601];
+SyncEnd     = Counter:['D'604]; 
 Restart     = Counter:['D'627..'D'628]; 
 
-RESET    =  Restart;
-!VSYNC   =  SyncPulse;
-VDISPLAY =  Display;
-!VBLANK  =  Display;
-!BLANK   = (Display & HDISPLAY);
-DISPLAY  = (Display & HDISPLAY);
+RESET         =  Restart;
+!VSYNCSTART   =  SyncStart;
+!VSYNCEND     =  SyncEnd;
+VDISPLAY      =  Display;
+!VBLANK       =  Display;
+!BLANK        = (Display & HDISPLAY);
+DISPLAY       = (Display & HDISPLAY);
