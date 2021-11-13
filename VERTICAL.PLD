@@ -41,7 +41,7 @@ PIN   24     = VCC;
 FIELD Counter = [C11..C0];
 
 Display     = Counter:['D'000..'D'599]; 
-SyncPulse   = Counter:['D'601..'D'603];    
+SyncPulse   = Counter:['D'601..'D'604];    
 Restart     = Counter:['D'627..'D'628]; 
 
 RESET    =  Restart;
