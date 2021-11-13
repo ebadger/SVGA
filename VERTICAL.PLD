@@ -21,11 +21,12 @@ Device   g22V10 ;
 */
 
 /* *************** INPUT PINS *********************/
-PIN 1        = PHI2;
+PIN  1       = PHI2;
 PIN [2..11]  = [C11..C2];
+PIN  12      = GND;
 PIN [13..14] = [C1..C0];
 
-PIN 15       = HDISPLAY;
+PIN   15     = HDISPLAY;
 
 /* *************** OUTPUT PINS *********************/
 PIN   16     = VSYNC;
@@ -35,18 +36,19 @@ PIN   18     = VDISPLAY;
 PIN   19     = BLANK;
 PIN   20     = DISPLAY;
 PIN   23     = RESET;
+PIN   24     = VCC;
 
 FIELD Counter = [C11..C0];
 
 Display     = Counter:[0000..0257];     /*   0-599 */
 /*FrontPorch  = Counter:[0257..0258];*/ /* 599-600 */
-SyncPulse   = Counter:[0259..025C];     /* 601-604 */   
+SyncPulse   = Counter:[0259..025D];     /* 601-604 */   
 /*BackPorch   = Counter:[025C..0273];*/ /* 604-627 */
-Restart     = Counter:[0273..0274];     /* 627-628 */
+Restart     = Counter:[0273..0275];     /* 627-628 */
 
 RESET    =  Restart;
-VSYNC    = !SyncPulse;
+!VSYNC   =  SyncPulse;
 VDISPLAY =  Display;
-VBLANK   = !Display;
-BLANK    = !(Display & HDISPLAY);
-DISPLAY  =  (Display & HDISPLAY);
+!VBLANK  =  Display;
+!BLANK   = (Display & HDISPLAY);
+DISPLAY  = (Display & HDISPLAY);

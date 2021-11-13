@@ -5,7 +5,7 @@
   {Program "CUPL(WM) Version 5.0a"}
   {DBtype "Schematic"}
   {DBvrev 1.01}
-  {DBtime "Fri Nov 12 19:12:45 2021 "}
+  {DBtime "Fri Nov 12 21:02:30 2021 "}
   {DBunit "MIL"}
   {DBgrid 10}
   {Lyrstr "WIRES" 1 "BUS" 1 "GATE" 2 "IEEE" 2 "PINFUN" 3 "PINNUM" 1 
@@ -33,17 +33,18 @@
  {SYMBOL
   {PIN_DEF
    [Ly "PINCON"]
-   {P PHI2 {Pt "INPUT"}{Lq 0}{Ploc 100 300}}
-   {P C11 {Pt "INPUT"}{Lq 0}{Ploc 100 260}}
-   {P C10 {Pt "INPUT"}{Lq 0}{Ploc 100 240}}
-   {P C9 {Pt "INPUT"}{Lq 0}{Ploc 100 220}}
-   {P C8 {Pt "INPUT"}{Lq 0}{Ploc 100 200}}
-   {P C7 {Pt "INPUT"}{Lq 0}{Ploc 100 180}}
-   {P C6 {Pt "INPUT"}{Lq 0}{Ploc 100 160}}
-   {P C5 {Pt "INPUT"}{Lq 0}{Ploc 100 140}}
-   {P C4 {Pt "INPUT"}{Lq 0}{Ploc 100 120}}
-   {P C3 {Pt "INPUT"}{Lq 0}{Ploc 100 100}}
-   {P C2 {Pt "INPUT"}{Lq 0}{Ploc 100 80}}
+   {P PHI2 {Pt "INPUT"}{Lq 0}{Ploc 100 320}}
+   {P C11 {Pt "INPUT"}{Lq 0}{Ploc 100 280}}
+   {P C10 {Pt "INPUT"}{Lq 0}{Ploc 100 260}}
+   {P C9 {Pt "INPUT"}{Lq 0}{Ploc 100 240}}
+   {P C8 {Pt "INPUT"}{Lq 0}{Ploc 100 220}}
+   {P C7 {Pt "INPUT"}{Lq 0}{Ploc 100 200}}
+   {P C6 {Pt "INPUT"}{Lq 0}{Ploc 100 180}}
+   {P C5 {Pt "INPUT"}{Lq 0}{Ploc 100 160}}
+   {P C4 {Pt "INPUT"}{Lq 0}{Ploc 100 140}}
+   {P C3 {Pt "INPUT"}{Lq 0}{Ploc 100 120}}
+   {P C2 {Pt "INPUT"}{Lq 0}{Ploc 100 100}}
+   {P GND {Pt "INPUT"}{Lq 0}{Ploc 100 80}}
    {P C1 {Pt "INPUT"}{Lq 0}{Ploc 100 60}}
    {P C0 {Pt "INPUT"}{Lq 0}{Ploc 100 40}}
    {P HDISPLAY {Pt "INPUT"}{Lq 0}{Ploc 100 20}}
@@ -53,17 +54,19 @@
    {P BLANK {Pt "I/O"}{Lq 0}{Ploc 360 80}}
    {P DISPLAY {Pt "I/O"}{Lq 0}{Ploc 360 100}}
    {P RESET {Pt "I/O"}{Lq 0}{Ploc 360 120}}
+   {P VCC {Pt "OUTPUT"}{Lq 0}{Ploc 360 140}}
   }
 
   {PKG
    [Ly "REFDES"]
    [Ts 25][Tj "CB"][Tr 0][Tm "N"]
-   {Rdl 230 330}
+   {Rdl 230 350}
 
    [Ly "PINNUM"]
    [Ts 15][Tj "RC"]
-   {Pnl 120 310}
+   {Pnl 120 330}
    [Ts 15][Tj "RC"]
+   {Pnl 120 290}
    {Pnl 120 270}
    {Pnl 120 250}
    {Pnl 120 230}
@@ -84,16 +87,18 @@
    {Pnl 340 90}
    {Pnl 340 110}
    {Pnl 340 130}
+   {Pnl 340 150}
 
-   {Sd A 1 2 3 4 5 6 7 8 9 10 11 13 14 15 16 17 18 19 20 23}
+   {Sd A 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 23 24}
   }
 
   {PIC
    [Ly "GATE"]
    [Ts 15][Tj "LC"][Tr 0][Tm "N"]
-   {R 130 320 330 0}
-   {L 130 300 100 300}
-   {L 130 310 140 300 130 290}
+   {R 130 340 330 0}
+   {L 130 320 100 320}
+   {L 130 330 140 320 130 310}
+   {L 130 280 100 280}
    {L 130 260 100 260}
    {L 130 240 100 240}
    {L 130 220 100 220}
@@ -113,19 +118,21 @@
    {L 330 80 360 80}
    {L 330 100 360 100}
    {L 330 120 360 120}
+   {L 330 140 360 140}
    [Ly "PINNAM"]
    [Tj "LC"]
-   {T "PHI2" 140 300}
-   {T "C11" 140 260}
-   {T "C10" 140 240}
-   {T "C9" 140 220}
-   {T "C8" 140 200}
-   {T "C7" 140 180}
-   {T "C6" 140 160}
-   {T "C5" 140 140}
-   {T "C4" 140 120}
-   {T "C3" 140 100}
-   {T "C2" 140 80}
+   {T "PHI2" 140 320}
+   {T "C11" 140 280}
+   {T "C10" 140 260}
+   {T "C9" 140 240}
+   {T "C8" 140 220}
+   {T "C7" 140 200}
+   {T "C6" 140 180}
+   {T "C5" 140 160}
+   {T "C4" 140 140}
+   {T "C3" 140 120}
+   {T "C2" 140 100}
+   {T "GND" 140 80}
    {T "C1" 140 60}
    {T "C0" 140 40}
    {T "HDISPLAY" 140 20}
@@ -136,6 +143,7 @@
    {T "BLANK" 320 80}
    {T "DISPLAY" 320 100}
    {T "RESET" 320 120}
+   {T "VCC" 320 140}
    [Ly "DEVICE"]
    [Tj "CT"]
    {T "G22V10" 230 -10}
@@ -149,7 +157,7 @@
    {EX
     [Ly "ATTR2"]
     [Ts 12][Tj "CT"][Tr 0][Tm "N"]
-    {At PLD C:\SVGA\VERTICAL 230 320}
+    {At PLD C:\SVGA\VERTICAL 230 340}
    }
   }
  }
@@ -181,6 +189,8 @@
    }
    {N C2
    }
+   {N GND
+   }
    {N C1
    }
    {N C0
@@ -198,6 +208,8 @@
    {N DISPLAY
    }
    {N RESET
+   }
+   {N VCC
    }
   }
 
