@@ -44,7 +44,7 @@ FIELD Counter = [C11..C0];
 Display     = Counter:['D'000..'D'599];
 SyncStart   = Counter:['D'601];
 SyncEnd     = Counter:['D'605]; 
-Restart     = Counter:['D'627..'D'628]; 
+Restart     = Counter:['D'628]; 
 
 RESET         =  Restart;
 !VSYNCSTART   =  SyncStart;
