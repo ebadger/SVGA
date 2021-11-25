@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name 65xx)(type Legacy)(uri C:/Users/ebadger/Documents/kicad/SVGA/65xx.lib)(options "")(descr ""))
+  (lib (name 6502)(type Legacy)(uri C:/Users/ebadger/Documents/kicad/SVGA/6502.lib)(options "")(descr ""))
+  (lib (name 2021-11-13_22-40-30)(type Legacy)(uri C:/Users/ebadger/Documents/kicad/SVGA/2021-11-13_22-40-30.lib)(options "")(descr ""))
+)
